@@ -31,17 +31,13 @@ function UserFromJson() {
       
       </p>
     `;
-    var ele = document.createElement("div");
-    ele.innerHTML = content;
-    return ele;
-
-
+    
     "use strict"; // turn off the "auto variable declaration" feature of the browser.
 
     // invoke ajax function to read cars.json and if the call was successful, 
     // run function processJSON, otherwise, put an error message in the DOM element 
     // that has id "listHere".
-    ajax("json/users.json", processData, "listHere");
+    ajax("json/users.json", processData, document.getElementById("listHere"));
 
     function processData(list) {
 
@@ -68,11 +64,15 @@ function UserFromJson() {
 
         console.log("USER LIST");
         console.log(userList);
-
-        // Making a DOM object, nothing shows yet... 
-        MakeTable(userList, "listHere", "membershipFee");
+        
+        document.getElementById("listHere").appendChild(MakeTable(userList));
 
     }
+    
+    var ele = document.createElement("div");
+    ele.innerHTML = content;
+    
+    return ele;
 
 
 
