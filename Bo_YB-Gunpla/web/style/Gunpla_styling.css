@@ -1,0 +1,21 @@
+.GunplaStyle {
+    position:relative;
+    height:400px;
+    width:40%;
+    border-radius: 0.25rem;
+    padding: 0.25rem;
+    margin: 1rem;
+}
+
+.GunplaStyle img{
+    position:absolute;
+    left:40%;
+    width:40%;
+    height:300px;
+}
+
+.GunplaStyle .GunplaInfo{
+    position:absolute;
+    left:30%;
+    bottom: 0%;
+}

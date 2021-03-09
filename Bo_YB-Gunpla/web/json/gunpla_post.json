@@ -1,0 +1,38 @@
+[
+    {
+        "gunpla_post_id": 1,
+        "title": "MG Freedom Gunpla 2.0",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/81-5GWaJmHL._AC_SL1500_.jpg",
+        "description": "This is MG Freedom",
+        "publish_date": "2015",
+        "tag": "Gundam Seed",
+        "web_user_id":1
+    },
+    {
+        "gunpla_post_id": 2,
+        "title": "https://www.gundamplanet.com/pub/media/catalog/product/cache/35d58a404066fb7050f9c81dce7bd675/m/g/mg-gat-x105-aile-strike-gundam-ver-rm-pa.jpg",
+        "image": "...",
+        "description": "This is MG Strike",
+        "publish_date": "2016",
+        "tag": "Gundam Seed",
+        "web_user_id":2
+    },
+    {
+        "gunpla_post_id": 3,
+        "title": "MG Exia Gunpla",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/91kKTUk3aCL._AC_SL1500_.jpg",
+        "description": "This is MG Exia",
+        "publish_date": "2014",
+        "tag": "Gundam 00",
+        "web_user_id":343
+    },
+    {
+        "gunpla_post_id": 4,
+        "title": "RG Freedom Gunpla",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/71Rf5X-q9JL._AC_SL1500_.jpg",
+        "description": "This is RG Freedom",
+        "publish_date": "2017",
+        "tag": "Gundam Seed",
+        "web_user_id":329
+    }
+]

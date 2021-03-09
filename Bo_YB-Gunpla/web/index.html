@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>YB-Gunpla</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style/index_style.css">
+        <link rel="stylesheet" type="text/css" href="style/drop_down.css">
+        <link rel="stylesheet" type="text/css" href="style/Gunpla_styling.css">
+    </head>
+    
+    <body>
+        <!--here is nav bar-->
+        <div id="titleNav">
+            <!--title in nav bar-->
+            <div id="title">
+                YB-Gunpla
+            </div>
+            <!--some other link for user to click in nav bar-->
+            <div id="nav">
+                <div class="dropdown">
+                    <a href="#/home">Home</a>
+                </div>
+                <div class="dropdown">
+                    <div class="dropHeader" onclick="drop(this, 'hide', 'show')">Account</div>
+                    <div class="dropContent">
+                        <a>Sign Up</a> <br/>
+                        <a>Sign In</a> <br/>
+                        <a>Profile</a> <br/>
+                        <a>Log Out</a>
+                    </div> 
+                </div>
+                <div class="dropdown">
+                    <div class="dropHeader" onclick="drop(this, 'hide', 'show')">Search</div>
+                    <div class="dropContent">
+                        <a>Users</a> <br/>
+                        <a>Posts</a> <br/>
+                        <a href="#/js_obj">JS Objects</a><br/>
+                        <a href="#/user_json">Users Info</a>
+                    </div>
+                </div>     
+                <div class="dropdown">
+                    <a href="#/blog">Blog</a> 
+                </div>
+            </div>
+            
+        </div>
+
+        <!--content area-->
+        <div id="content">
+            
+        </div>
+        
+<!--        <div id="container">
+            
+        </div>-->
+        
+
+        <!--footer area-->
+        <div id="footer">
+            Yang Bo
+        </div>
+        <script src='js/reusable/drop_down.js'></script>
+        <script src="js/reusable/route_fw.js"></script>
+        <script src="js/reusable/MakeGundam.js"></script>
+        <script src="js/reusable/MakeClickSortTable.js"></script>
+        <script src="js/reusable/ajax.js"></script>
+        <script src="js/components/home.js"></script>
+        <script src="js/components/blog.js"></script>
+        <script src="js/components/gundam_obj.js"></script>
+        <script src="js/components/UserFromJson.js"></script>
+        <script>
+            "use strict";
+
+            var myRoutes = [];
+
+            myRoutes['#/home'] = home;
+            myRoutes['#/blog'] = blog;
+            myRoutes['#/js_obj'] = gundam_obj;
+            myRoutes['#/user_json'] = UserFromJson;
+            var myRouteFw = routeFw({
+                routeArray: myRoutes,
+                contentId: "content",
+                startLink: "#/home"
+            });
+            myRouteFw.printRoutes();
+        </script>
+<!--        <script>
+            "use strict";
+
+            document.getElementById("container").appendChild(gundam_obj());
+            
+        </script>-->
+         
+    </body>
+</html>

@@ -1,0 +1,93 @@
+body {
+    background-color: gray;
+    font-family:sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+
+#titleNav{
+    position:fixed; 
+    top:0px;
+    left:0px;
+    z-index: 1;
+    width: 100%;
+    background-color:black;
+
+    padding-bottom: 10px;
+    color: white;
+    font-family: serif; 
+    font-weight: bold;
+}
+
+#title {
+    padding:10px;
+    padding-bottom: 0px;
+    font-size:48px;
+    letter-spacing: 1.5px; /* spaces out letters a bit */
+}
+
+#nav {
+    position: fixed; 
+    top: 0px;
+    right: 0px;
+    text-align:right;
+    font-size:24px;
+    padding-bottom: 12px;
+
+    padding-top:32px;
+    white-space: nowrap;
+}
+
+#nav a {
+    text-decoration: none;
+    color: white;
+}
+
+#content {
+    padding:12px;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    text-align:left;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0px; 
+    left: 0px; 
+    z-index: 1; 
+    background-color:black;
+    color: white; 
+    width:100%;
+    text-align:center;
+    padding:8px;	
+}
+
+img {
+    position:absolute;
+
+    left: 20%;
+}
+
+.gundamContainer {
+    display: flex;
+    flex-direction: row;
+}
+.gundamContainer .gundamStyle {
+    background-color:#DDDDDD; /* light grey */
+    padding:0.5rem;
+    margin:0.5rem;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px #888888; /* darker grey */
+    width: 48%; 
+    margin: 1%;
+    text-align: center;
+    margin:auto;
+}
+.gundamContainer .gundamStyle img {
+    width: 80%;
+}
+
+.gundamContainer .gundamStyle h3 {
+    margin-bottom: 0rem;
+}
