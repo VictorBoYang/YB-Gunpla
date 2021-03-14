@@ -41,7 +41,8 @@ and open the template in the editor.
                         <a>Users</a> <br/>
                         <a>Posts</a> <br/>
                         <a href="#/js_obj">JS Objects</a><br/>
-                        <a href="#/user_json">Users Info</a>
+                        <a href="#/user_json">Users Info</a><br/>
+                        <a href="#/liveUsers">Live Users Info</a>
                     </div>
                 </div>     
                 <div class="dropdown">
@@ -74,6 +75,7 @@ and open the template in the editor.
         <script src="js/components/blog.js"></script>
         <script src="js/components/gundam_obj.js"></script>
         <script src="js/components/UserFromJson.js"></script>
+        <script src="js/components/liveUsers.js"></script>
         <script>
             "use strict";
 
@@ -83,6 +85,7 @@ and open the template in the editor.
             myRoutes['#/blog'] = blog;
             myRoutes['#/js_obj'] = gundam_obj;
             myRoutes['#/user_json'] = UserFromJson;
+            myRoutes['#/liveUsers'] = liveUsers;
             var myRouteFw = routeFw({
                 routeArray: myRoutes,
                 contentId: "content",
