@@ -60,9 +60,28 @@ var content = `
             <a  target="_blank" href="pics/Database_design.pdf">
                 click to see Database design(PDF)
             </a>
+    
+            <h3>
+                Web APIs Blog
+            </h3>
+    
+            <p>
+                For this week's homework, the main thing is to import Web APIs into our project, 
+                connect to our online database, extract data from our database and display it. 
+                Compared with last week's json job, this week's job is to convert reading json into reading online database data.
+                
+                For this week I think the simple thing is that we can use many of the codes used in the last week's homework. 
+                Only need to change the processlist slightly. 
+                I think the difficult part is to import my database into the project at the beginning. 
+                It is difficult for me who have never been in contact with web APIs, and I need to learn from scratch.
+            </p>
+    
+            <a target="_blank" href="pics/Web_API_error_report.pdf">
+                click to see my error document
+            </a>
     `;
         var ele = document.createElement("div");
         ele.innerHTML = content;
         return ele;
-        }
+}
 
