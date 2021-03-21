@@ -8,7 +8,7 @@
     
     if (session.getAttribute("LoggedOnUser")!=null){
         System.out.println("got UserObj");
-        StringData loggedOnWebUser = (StringData) session.getAttribute("loggedOnUser");
+        StringData loggedOnWebUser = (StringData) session.getAttribute("LoggedOnUser");
         Gson gson = new Gson();
         out.print(gson.toJson(loggedOnWebUser).trim());
 //        http://localhost:9090/Bo_YB-Gunpla/webAPIs/getProfileAPI.jsp
