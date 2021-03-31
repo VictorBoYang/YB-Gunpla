@@ -30,9 +30,9 @@ and open the template in the editor.
                     <div class="dropHeader" onclick="drop(this, 'hide', 'show')">Account</div>
                     <div class="dropContent">
                         <a>Sign Up</a> <br/>
-                        <a>Sign In</a> <br/>
-                        <a>Profile</a> <br/>
-                        <a>Log Out</a>
+                        <a href="#/logOn">Sign In</a> <br/>
+                        <a href="#/getProfile">Profile</a> <br/>
+                        <a href="#/logOff">Log Out</a>
                     </div> 
                 </div>
                 <div class="dropdown">
@@ -78,6 +78,7 @@ and open the template in the editor.
         <script src="js/components/UserFromJson.js"></script>
         <script src="js/components/liveUsers.js"></script>
         <script src="js/components/liveGunpla.js"></script>
+        <script src="js/components/account.js"></script>
         <script>
             "use strict";
 
@@ -89,6 +90,9 @@ and open the template in the editor.
             myRoutes['#/user_json'] = UserFromJson;
             myRoutes['#/liveUsers'] = liveUsers;
             myRoutes['#/liveGunpla'] = liveGunpla;
+            myRoutes['#/logOn'] = account.logon;
+            myRoutes['#/getProfile'] = account.getProfile;
+            myRoutes['#/logOff'] = account.logOff;
             var myRouteFw = routeFw({
                 routeArray: myRoutes,
                 contentId: "content",

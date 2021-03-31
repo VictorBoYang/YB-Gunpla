@@ -1,6 +1,7 @@
-function ajax(url, callBackSuccess, errorId) {
+function ajax (url, successCallBackFn, errorEle) {
 
-// The httpReq Object is now local to function "ajaxCall" (not global)
+    // This httpReq Object is now local to function "ajaxCall" (not global)
+    // AND we get a new object each time we invoke the ajax function.
     var httpReq;
     if (window.XMLHttpRequest) {
         httpReq = new XMLHttpRequest(); //For Firefox, Safari, Opera
@@ -12,27 +13,38 @@ function ajax(url, callBackSuccess, errorId) {
 
     console.log("ready to get content " + url);
     httpReq.open("GET", url); // specify which page you want to get
-    httpReq.onreadystatechange = dataReady;
-    httpReq.send(null); // initiate ajax call
 
-    // dataReady will be invoked by the browser about 4 times (ready state = 1, 2, 3, 4. 
-    // (because this is the name specified in the http request onreadystatechange property. 
-    function dataReady() {
+    // We now define the function that the browser will "call back" when the data is available.
+    // We do not bother naming the function. It's defined anonymously, in line. 
 
-        // readyState 4 means that the http request is complete
-        if (httpReq.readyState === 4) {
-            if (httpReq.status === 200) { // status 200 means page found
-                var jsonData = httpReq.responseText;
-                console.log("jsonData read: " + jsonData);
-                var jsObj = JSON.parse(jsonData);
-                // invoke the HTML coder's function, passing in the JS object converted from the JSON data
-                callBackSuccess(jsObj);
-            } else {
-                // First use of property creates new (custom) property
-                document.getElementById(errorId).innerHTML = "Error (" + httpReq.status + " " + httpReq.statusText +
-                        ") while attempting to read '" + url + "'. NOTE: You must RUN not VIEW the page when using AJAX.";
+    httpReq.onreadystatechange = function () {
+        //console.log("in ajax, ready state is " + httpReq.readyState);
+
+        if (httpReq.readyState === 4) {     // 4 means that the data transfer is complete
+            console.log("in ajax, status is " + httpReq.status);
+            
+            if (httpReq.status === 200) {   // 200 means file found (unlike 404 which means not found)
+                console.log("in ajax, passing forward object");
+                
+                var obj = JSON.parse(httpReq.responseText);
+
+                // Here we call back whichever function wanted us to make the AJAX call. 
+                // Let that function handle the details of what to do with the data, how to parse it... 
+                // The responseText property holds the data. This code assumes the data returned is 
+                // in JSON format, so it converts this to a JavaScript object, passing that to 
+                // the function that is to handle the data returned by the AJAX call. 
+                successCallBackFn(obj);
+
+            } else {  // error, file not found
+
+                // One input parameter to this ajax function is a DOM element designed to hold any possible error message. 
+                // Populate it with as much information as we know about the error. 
+                errorEle.innerHTML = "Error " + httpReq.status + "-" + httpReq.statusText +
+                        " while attempting to read '" + url + "'. Must Run not View if AJAX being used.";
             }
         }
-    } // dataReady
+    }; // end of anonymous callback function definition
 
+    httpReq.send(null); // initiate ajax call
+    console.log("call initiated");
 }
